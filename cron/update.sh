@@ -12,20 +12,25 @@ check_service() {
 	fi
 }
 
+check_service 1521 oracle
+check_service 1583 pervasive
+check_service 3050 firebird
 check_service 3306 mysql
 check_service 5432 postgres
 
 check_service 80 http
 check_service 443 https
 
-check_service 25 smtpd
+check_service 25 smtp
 check_service 143 imap
 check_service 993 imaps
 check_service 110 pop3
 check_service 995 pop3s
 
-check_service 22 sshd
+check_service 21 ftp
+check_service 22 ssh
 check_service 53 dns
+check_service 111 portmap
 check_service 953 rdnc
 check_service 2812 monit
 check_service 11211 memcached
