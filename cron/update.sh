@@ -7,7 +7,7 @@ services=""
 check_service() {
 	port=$1
 	svc=$2
-	if nc -z 127.0.0.1 $port; then
+	if nc -z 127.0.0.1 $port >/dev/null; then
 		services="$services,$svc"
 	fi
 }
