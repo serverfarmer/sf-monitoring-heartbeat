@@ -17,6 +17,9 @@ check_service 1583 pervasive
 check_service 3050 firebird
 check_service 3306 mysql
 check_service 5432 postgres
+check_service 6379 redis
+check_service 9200 elasticsearch
+check_service 9300 elasticcluster
 
 check_service 80 http
 check_service 443 https
