@@ -23,6 +23,7 @@ check_service 9300 elasticcluster
 
 check_service 80 http
 check_service 443 https
+check_service 8080 app8080
 
 check_service 25 smtp
 check_service 143 imap
