@@ -1,5 +1,5 @@
 #!/bin/bash
-. /opt/farm/scripts/init
+. /etc/farmconfig
 . /opt/farm/scripts/functions.custom
 
 services=""
