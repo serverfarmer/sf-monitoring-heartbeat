@@ -39,5 +39,10 @@ check_service 953 rdnc
 check_service 2812 monit
 check_service 11211 memcached
 
-url=`heartbeat_url`
+if [ "$1" != "" ]; then
+	url="$1"
+else
+	url=`heartbeat_url`
+fi
+
 curl --connect-timeout 1 --retry 2 --retry-max-time 3 -s "$url?host=$HOST&services=${services:1}" |grep -v ^ok$
