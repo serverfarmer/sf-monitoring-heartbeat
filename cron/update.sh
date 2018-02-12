@@ -39,6 +39,11 @@ check_service 953 rdnc
 check_service 2812 monit
 check_service 11211 memcached
 
+if [ "`which docker`" != "" ]; then
+	containers=`docker ps --format '{{.Names}}' |tr '\n' ','`
+	services="$services,${containers::-1}"
+fi
+
 if [ "$1" != "" ]; then
 	url="$1"
 else
