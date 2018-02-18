@@ -37,6 +37,7 @@ check_service 53 dns
 check_service 111 portmap
 check_service 953 rdnc
 check_service 2812 monit
+check_service 3260 iscsi
 check_service 11211 memcached
 
 if [ "`which docker`" != "" ]; then
