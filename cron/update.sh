@@ -62,4 +62,4 @@ else
 	url=`heartbeat_url`
 fi
 
-curl --connect-timeout 1 --retry 2 --retry-max-time 3 -s "$url?host=$HOST&services=${services:1}" |grep -v ^ok$
+curl --connect-timeout 1 --retry 2 --retry-max-time 3 -s "$url?host=$HOST&services=${services:1}" >/dev/null 2>/dev/null
