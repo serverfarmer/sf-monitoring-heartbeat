@@ -56,7 +56,7 @@ if [ "`which docker`" != "" ]; then
 	services="$services,${containers::-1}"
 fi
 
-disks=`df |grep dev/mapper/disk- |cut -d' ' -f1 |cut -d'/' -f4 |tr '[:upper:]' '[:lower:]' |tr '\n' ','`
+disks=`df |grep dev/mapper/disk- |grep -v : |cut -d' ' -f1 |cut -d'/' -f4 |tr '[:upper:]' '[:lower:]' |tr '\n' ','`
 if [ "$disks" != "" ]; then
 	services="$services,${disks::-1}"
 fi
