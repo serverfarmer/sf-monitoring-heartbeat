@@ -52,8 +52,10 @@ check_service 3260 iscsi
 check_service 11211 memcached
 
 if [ "`which docker`" != "" ]; then
-	containers=`docker ps --format '{{.Names}}' |tr '\n' ','`
-	services="$services,${containers::-1}"
+	containers=`docker ps --format '{{.Names}}' 2>/dev/null |tr '\n' ','`
+	if [ "$containers" != "" ]; then
+		services="$services,${containers::-1}"
+	fi
 fi
 
 if [ "$HWTYPE" != "lxc" ]; then
