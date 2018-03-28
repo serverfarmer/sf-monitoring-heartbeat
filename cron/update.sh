@@ -25,6 +25,8 @@ check_service 80 http
 check_service 443 https
 check_service 3128 squid
 check_service 3000 app3000
+check_service 3001 app3001
+check_service 3002 app3002
 check_service 8080 app8080
 
 check_service 25 smtp
@@ -33,9 +35,9 @@ check_service 993 imaps
 check_service 110 pop3
 check_service 995 pop3s
 
-check_service 137 netbiosns
-check_service 138 netbiosdgm
-check_service 139 netbiosssn
+check_service 137 netbios-ns
+check_service 138 netbios-dgm
+check_service 139 netbios-ssn
 check_service 445 samba
 
 check_service 21 ftp
