@@ -53,6 +53,24 @@ check_service 2812 monit
 check_service 3260 iscsi
 check_service 11211 memcached
 
+# https://developer.couchbase.com/documentation/server/current/install/install-ports.html
+check_service 4369 cb-epmd
+check_service 6060 cb-query-internal
+check_service 8091 cb-rest
+check_service 8092 cb-capi
+check_service 8093 cb-query
+check_service 8094 cb-fts
+check_service 9100 cb-indexer-admin
+check_service 9101 cb-indexer-scan
+check_service 9102 cb-indexer-http
+check_service 9105 cb-indexer-stmaint
+check_service 9998 cb-xdcr-rest
+check_service 9999 cb-projector
+check_service 11209 cb-memcached-dedicated
+check_service 11210 cb-memcached
+check_service 21100 cb-internal0
+check_service 21101 cb-internal1
+
 if [ "`which docker`" != "" ]; then
 	containers=`docker ps --format '{{.Names}}' 2>/dev/null |tr '\n' ','`
 	if [ "$containers" != "" ]; then
