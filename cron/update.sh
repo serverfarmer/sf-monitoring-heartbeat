@@ -20,6 +20,8 @@ check_service 5432 postgres
 check_service 6379 redis
 check_service 9200 elasticsearch
 check_service 9300 elasticcluster
+check_service 11211 memcached
+check_service 27017 mongodb
 
 check_service 80 http
 check_service 443 https
@@ -51,7 +53,6 @@ check_service 953 rdnc
 check_service 1194 openvpn
 check_service 2812 monit
 check_service 3260 iscsi
-check_service 11211 memcached
 
 # https://developer.couchbase.com/documentation/server/current/install/install-ports.html
 check_service 4369 cb-epmd
