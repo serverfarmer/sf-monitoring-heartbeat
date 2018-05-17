@@ -82,7 +82,7 @@ if [ "`which docker`" != "" ]; then
 fi
 
 if [ "$HWTYPE" != "lxc" ]; then
-	disks=`df |grep dev/mapper/disk- |grep -v : |cut -d' ' -f1 |cut -d'/' -f4 |tr '[:upper:]' '[:lower:]' |tr '\n' ','`
+	disks=`df |grep dev/mapper/disk- |sed s/0:0-//g |grep -v : |cut -d' ' -f1 |cut -d'/' -f4 |tr '[:upper:]' '[:lower:]' |tr '\n' ','`
 	if [ "$disks" != "" ]; then
 		services="$services,${disks::-1}"
 	fi
