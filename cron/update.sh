@@ -95,8 +95,8 @@ if [ "$HWTYPE" != "lxc" ]; then
 	fi
 fi
 
-if [ "$1" != "" ]; then
-	url="$1"
+if [ -s /etc/local/.config/heartbeat.url ]; then
+	url=`cat /etc/local/.config/heartbeat.url`
 else
 	url=`heartbeat_url`
 fi
