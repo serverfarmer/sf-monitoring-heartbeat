@@ -74,8 +74,8 @@ check_service 11210 cb-memcached
 check_service 21100 cb-internal0
 check_service 21101 cb-internal1
 
-if [ "`which docker`" != "" ]; then
-	containers=`docker ps --format '{{.Names}}' 2>/dev/null |tr '\n' ','`
+if [ -x /usr/bin/docker ]; then
+	containers=`/opt/farm/ext/monitoring-heartbeat/utils/list-docker-containers.sh |tr '\n' ','`
 	if [ "$containers" != "" ]; then
 		services="$services,${containers::-1}"
 	fi
