@@ -25,8 +25,6 @@ conditional_move /etc/local/.config/heartbeat.url           /etc/heartbeat/serve
 conditional_move /etc/local/.config/raid.drives             /etc/heartbeat/detected-raid-drives.conf
 conditional_move /etc/local/.config/space-check.directories /etc/heartbeat/detected-data-directories.conf
 
-/opt/farm/ext/packages/utils/install.sh sudo smartmontools
-
 /opt/farm/scripts/setup/extension.sh sf-db-utils
 /opt/farm/scripts/setup/extension.sh heartbeat-linux
 
